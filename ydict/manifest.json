@@ -1,0 +1,18 @@
+{
+   "background_page": "background.html",
+   "browser_action": {
+      "default_icon": "fanyi2-48x48.png"
+   },
+   "default_locale": "zh_CN",
+   "description": "__MSG_appDesc__",
+   "icons": {
+      "128": "fanyi2-128x128.png",
+      "48": "fanyi2-48x48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCXQJrcTsAjjbXoWnAeglHk/M+XUWuRx9u4GuJMAwnMiV5ifzLSQkXwXwpPXCo3Qkmr72k9nOBp+kh4hUTKqWUE4tSFmpW7sn5OWIh8hDMaYIDY7STYgBHCEDBrjrGu57oDB5CvAoO6R94C/lQ4YVaZySx5NPUCv3JRZRStFxj/xwIDAQAB",
+   "name": "__MSG_appName__",
+   "permissions": [ "http://*/*", "https://*/*", "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.5",
+   "manifest_version": 2
+}
