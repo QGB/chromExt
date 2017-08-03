@@ -1,0 +1,141 @@
+body
+{ 
+  font-size: 11pt;
+  font-family: "Arial";
+  color: #101010;
+  }
+
+.clear
+{  
+  clear: both;
+}
+
+#logo
+{  
+  float: left;
+}
+
+#title
+{  
+  font-size: 20px;
+  float: left;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+#save_status
+{
+  padding: 5px;
+  color: green;
+  float: right;
+}
+
+
+.settings-table
+{ 
+  width: 620px;
+  padding: 10px;
+  border: solid 1px #ccc;
+  background-image: url("../icons/optionsBackground.jpg");
+ }
+
+.option_name
+{ 
+  width: 220px;
+}
+
+.group_option
+{  
+  font-weight: bold;
+}
+
+.group_option_row
+{  
+  height: 50px;
+}
+
+.color
+{ 
+  width: 60px;
+  border: solid 1px #ccc;
+  font-size: 10px;
+ }
+
+.option_col
+{ 
+  width: 250px;
+ }
+
+h1
+{ 
+  font-variant: small-caps;
+  font-size: 18px;
+ }
+
+#main_container
+{ 
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  padding-top: 10px;
+ }
+
+#options_container
+{  
+  float:left;
+}
+
+#fontSelectorBtn
+{  
+  text-decoration: underline;
+  color: #2342DB;
+  cursor: pointer;
+}
+
+.FontsContainer
+{  
+  overflow: auto;
+  background-color: #ddd;
+  height: 150px;
+  width: 250px;
+  
+}
+
+.SingleFontDiv
+{ 
+  border: 1px solid #ccc;
+  cursor:pointer;
+  padding-top: 5px;
+  padding-left: 5px;
+  font-size: 14px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+.SingleFontDiv:hover
+{  
+  background-image: url('../icons/selectBackground.jpg');
+}
+
+#sampleBlock
+{
+  margin-left: 20px;
+  margin-top: 64px;
+  float: left;
+  overflow: auto;
+  width: 200px;
+  height: 205px;
+  padding: 15px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+}
+
+#default_font
+{
+  font-size: 12pt;
+}
+
+#shortCuts
+{
+  color: #4D4D4D;
+}

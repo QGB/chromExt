@@ -1,0 +1,28 @@
+<script>
+<!-- function reqListener () { -->
+
+	<!-- var su=this.responseText -->
+	<!-- console.log(su) -->
+<!-- } -->
+
+<!-- var xhr = new XMLHttpRequest(); -->
+<!-- xhr.onload = reqListener; -->
+<!-- xhr.open("post", "http://127.0.0.1/up", true); -->
+<!-- xhr.send(233); -->
+
+
+
+var xhr = new XMLHttpRequest(); 
+xhr.open("post", "http://127.0.0.1/up", true);
+
+xhr.onload = function () {
+  // Request finished. Do processing here.
+  console.log(arguments)
+};
+
+// xhr.send(null);
+xhr.send([123]);
+
+
+
+</script>

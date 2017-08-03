@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<title>Change Colors: Adjust your preferences</title>
+
+<link rel="stylesheet" type="text/css" href="css/options.css" />
+<script type="text/javascript" src="options_manage.js"></script>
+<script type="text/javascript" src="libs/font_detect.js"></script>
+</head>
+<body onload="restoreOptions();">
+  <div id="main_container">
+    <div id="options_container">
+      <div id="logo"><img src="icons/colors_icons_64.png" alt="Change Colors"/></div>
+      <div id="title">Adjust your preferences</div>
+      <div class="clear"></div>
+      <table cellpadding="5" class="settings-table">
+	<tr class="group_option_row">
+	  <td class="option_col">
+	    <span class="group_option">Use Web pages fonts ?</span>
+	  </td>
+	  <td>
+	    Yes: <input type="radio" id="browserFontDefault"  name="browser_font" value="true"
+			onClick="fontRadioDefault();"/>
+	    No: <input type="radio" id="browserFontOverride" name="browser_font" value="false"
+		       onClick="fontRadioOverride();"/>
+	  </td>
+	</tr>
+	<tr id="fontSelection" style="display: none;">
+	  <td class="option_name">
+	    <span>Replacement font:</span>
+	  </td>
+	  <td>
+	    <span id="default_font">Arial</span>&nbsp;
+	    <span id="fontSelectorBtn" onClick="showFonts();">(Use another font)</span>
+	    <br />
+	    <div id="fontSelector" style="display: none;">
+	      <script type="text/javascript">
+		<!--
+		   document.write(buildFontSelector());
+		   // -->
+	      </script>
+	    </div>
+	  </td>
+	</tr>
+	<tr id="fontSetter" style="display: none;">
+	  <td>
+	    <span>Custom font:</span>
+	  </td>
+	  <td>
+	    <input id="userCustomFont" type="text"
+	    name="userCustomFont" value="Enter a font name"
+	    onClick="this.value = '';" />
+	    <input type="button" name="addUserCustomFont"
+	    value="Add" onClick="addFont();"/><br />
+	    <span id="userFontMessage"></span>
+	  </td>
+	</tr>
+	<tr id="fontSizeRow" style="display: none;">
+	  <td>
+	     Font size:
+	  </td>
+	  <td>
+	      <script type="text/javascript">
+		<!--
+		   document.write(buildFontSizeSelector());
+		   // -->
+	      </script>
+	  </td>
+	</tr>
+	<tr class="group_option_row">
+	  <td class="option_col">
+	    <span class="group_option">Use Web pages colors ?</span>
+	  </td>
+	  <td>
+	    Yes: <input type="radio" id="browserColorDefault"  name="browser_color" value="true"
+			onClick="colorRadioDefault();"/>
+	    No: <input type="radio" id="browserColorOverride" name="browser_color" value="false"
+		       onClick="colorRadioOverride();"/>
+	  </td>
+	</tr>
+	<tr id="background_color_row">
+	  <td class="option_name">
+	    <span>Background color:</span>
+	  </td>
+	  <td>
+	    <input class="color" id="background_color" value="0F0F0F"
+		   onchange="bindColor('background_color',
+			     'backgroundColor', 'sampleBlock')"/>
+	  </td>
+	</tr>
+	<tr id="text_color_row">
+	  <td class="option_name">
+	    <span>Text color:</span>
+	  </td>
+	  <td>
+	    <input class="color" id="text_color" value="EDEDED"
+		   onchange="bindColor('text_color', 'color', 'sampleBlock')"/>
+	  </td>
+	</tr>
+	<tr id="links_color_row">
+	  <td class="option_name">
+	    <span>Links color:</span>      
+	  </td>
+	  <td>
+	    <input class="color" id="links_color" value="42ADDB"
+		   onchange="bindColor('links_color', 'color', 'link')"/>
+	  </td>
+	</tr>
+	<tr id="visited_links_color_row">
+	  <td class="option_name">
+	    <span>Visited links color:</span>      
+	  </td>
+	  <td>
+	    <input class="color" id="visited_links_color" value="5B3BDB"
+		   onchange="bindColor('visited_links_color', 'color', 'visited_link')"/>
+	  </td>
+	</tr>
+	<tr class="group_option_row">
+	  <td class="option_col">
+	    <span class="group_option">Show images?</span>
+	  </td>
+	  <td>
+	    Yes: <input type="radio" id="showImageDefault" name="browser_show_image" value="true"
+	    onClick="saveOption('ShowImage', true);"/>
+	    No: <input type="radio" id="showImageOverride" name="browser_show_image" value="false"
+	    onClick="saveOption('ShowImage', false);"/>
+	  </td>
+	</tr>
+	<tr class="group_option_row">
+	  <td class="option_col">
+	    <span class="group_option">Show Flash objects?</span>
+	  </td>
+	  <td>
+	    Yes: <input type="radio" id="showFlashDefault" name="browser_show_flash" value="true"
+	    onClick="saveOption('ShowFlash', true);"/>
+	    No: <input type="radio" id="showFlashOverride" name="browser_show_flash" value="false"
+	    onClick="saveOption('ShowFlash', false);"/>
+	  </td>
+	</tr>	
+      </table>
+      <br /><br />
+      <div id="shortCuts">
+	<span id="shortCutsTitle">Keyboard Shortcuts:</span>
+	<ul>
+	  <li>Current Page Override/Remove-Override: Ctrl + Shift + P</li>
+	  <li>Domain Override/Remove-Override: Ctrl + Shift + D</li>
+	  <li>Global Override/Remove-Ovveride: Ctrl + Shift + G</li>
+	</ul>
+      </div>
+      <br />
+      <br />
+    </div>
+    <div id="sampleBlock">
+      Aliquam erat volutpat. Morbi aliquam metus at velit auctor
+      condimentum. Nullam nunc turpis, blandit vel aliquam nec,
+      blandit at massa. In eget eros felis, id bibendum
+      quam.<br /><br />
+      <a id="link" href="">this is a standard link</a><br /><br />
+      <a id="visited_link" href="">this is a visited link</a>
+    </div>
+    <div class="clear"></div>
+  </div>
+</body>
+<script type="text/javascript" src="libs/jscolor/jscolor.js"></script>
+</html>

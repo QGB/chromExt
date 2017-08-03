@@ -2,15 +2,20 @@
   "name": "qgb tmall",
   "description": "get page",
   "version": "0",
-  "permissions": [
-    "activeTab"
-  ],
+  "icons":{"16":"tmall.png"},
+  "permissions": 
+[    
+	"tabs",    
+	"bookmarks",    
+	"<all_urls>",
+	"unlimitedStorage"  
+],  
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
   "browser_action": {
-    "default_title": "get"
+    "default_title": "tmall"
   },
   "manifest_version": 2
 }
