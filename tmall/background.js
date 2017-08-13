@@ -3,9 +3,11 @@ function _TEXT(wrap) {
 }
 
 st= _TEXT(function(){/*
+return
 document.body.style.backgroundColor="red"
 document.body.style.backgroundColor="blue"
 setTimeout(function(){alert(0)},999)
+
 */}).replace(/ /g,'') 
 
 chrome.browserAction.onClicked.addListener(function(tab) {
