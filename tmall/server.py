@@ -1,9 +1,10 @@
 import sys,os;sys.path.append('C:/QGB/babun/cygwin/lib/python2.7/');
+print sys.path
 from qgb import *
 from qgb.N.HTTPServer import *
 U.cd__file__()
 @route('/u.js')
-def jsU(h,**ka):
+def u_js(h,**ka):
 	# U.repl()
 	return {"Content-type": "text/plain",
 		'content': U.read('../../js/U.js')}

@@ -6,7 +6,7 @@ try:
 except ImportError:
 	from StringIO import StringIO
 
-sys.path.append('M:/Program Files/.babun/cygwin/lib/python2.7/');from qgb import *
+sys.path.append('D:/Program Files/.babun/cygwin/lib/python2.7/');from qgb import *
 gsr=''
 class handler(BaseHTTPServer.BaseHTTPRequestHandler):
 	server_version = "SimpleHTTP/" 
@@ -46,6 +46,7 @@ class handler(BaseHTTPServer.BaseHTTPRequestHandler):
 		# print a,s.raw_requestline
 
 def test(HandlerClass = handler,   ServerClass = BaseHTTPServer.HTTPServer):
+	sys.argv=[sys.argv[0],'80']
 	BaseHTTPServer.test(HandlerClass, ServerClass)
 
 

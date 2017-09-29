@@ -1,19 +1,20 @@
+//      lolgkhcldofpohgjlmmjnmfgogjpeind
+
 function _TEXT(wrap) {
     return wrap.toString().match(/\/\*\s([\s\S]*)\s\*\//)[1];
 }
 
 st= _TEXT(function(){/*
-return
-document.body.style.backgroundColor="red"
-document.body.style.backgroundColor="blue"
-setTimeout(function(){alert(0)},999)
+// document.body.style.backgroundColor="red"
+
 
 */}).replace(/ /g,'') 
 
 chrome.browserAction.onClicked.addListener(function(tab) {
   // No tabs or host permissions needed!
-  loadqgb()
-  
+  // loadqgb()
+  x=new XMLHttpRequest()
+  x.open('get',)
   
   console.log('Turning ' + tab.url + ' red!');
   chrome.tabs.executeScript({
