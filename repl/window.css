@@ -1,0 +1,42 @@
+#console {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  -webkit-user-select: text;
+}
+
+#console .jqconsole {
+  white-space: pre-wrap;
+}
+
+#console .output {
+  color: #fff;
+}
+
+#console .info {
+  color: #bbb;
+}
+
+#console .warning {
+  color: #ff0;
+}
+
+#console .error {
+  color: #f00;
+}
+
+#console .block-delimiter {
+  color: #ad0;
+}
+
+#console .jqconsole-ansi-lighter {
+  opacity: .5;
+}
+
+#sandbox-frame {
+  width: 0;
+  height: 0;
+}
