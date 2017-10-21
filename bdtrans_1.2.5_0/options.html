@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>百度翻译</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/option.css">
+<script type="text/javascript" src="js/third_party/hm.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/options.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align:center;">百度翻译| 自定义设置</h1>
+    <hr class="head-hr" style="margin-bottom:0;">
+    <div class="autoTranslate">
+        <div class="autoTranslate-switch">
+            <h2>自动翻译网站<img src="imgs/map/on.png" class="switch-open" id="switch"></h2>
+            <table id="custom-head" class="table">
+                <tr>
+                    <td id="thead-tip">
+                        当您进入以下站点时，将为您自动翻译网页
+                    </td>
+                    <td>
+                        <a href="#" id="add">+添加站点</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-container">
+            <table id="custom" class="table-custom">
+            </table>
+        </div>
+    </div>
+    <div class="div-lang-detect">
+        <table>
+        <tr>
+            <td id="detect-switch-l">
+                <h2>自动检测页面语言</h2>
+                <p>
+                    当您进入非中文网站，自动提示您进行翻译
+                </p>
+            </td>
+            <td id="detect-switch-r">
+                <img src="imgs/map/on.png" class="switch-open" id="detect-switch">
+            </td>
+        </tr>
+        </table>
+    </div>
+    <div id="fanyi_huaci">
+        <div class="fanyi_huaci_switch">
+            <h2>划词翻译<img src="imgs/map/on.png" class="switch-open" id="huaci_switch"></h2>
+            <p>当划取文字或短语时:</p>
+        </div>
+        <hr class="head-hr" style="margin-top:0;">
+        <div id="huaci_options">
+            <div class="huaci_selections">
+                <img id="btn_switch" src="imgs/map/selected.png">
+                <span>显示图标，点击即可弹出翻译。</span>
+            </div>
+            <hr>
+            <div class="huaci_selections">
+                <img id="frame_switch" src="imgs/map/unselected.png">
+                <span>直接弹出翻译。</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

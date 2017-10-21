@@ -1,0 +1,43 @@
+{
+   "manifest_version":2,
+   
+  "background": {
+	 "scripts": [ "main.js" ]
+  },
+
+   "icons": {
+      "128": "icon.png",
+      "16": "icon.png"
+   },
+   "name": "QGB js REPL",
+ "permissions": [ "alarms", "audio", "audioCapture", "browser", "clipboardRead", "clipboardWrite", "contextMenus", "desktopCapture", "dns", "documentScan", 
+	{
+      "fileSystem": [ "write", "retainEntries", "directory" ]
+   },
+   "geolocation", "hid", "identity", "idle",
+   {
+      "mediaGalleries": [ "read", "allAutoDetected" ]
+   }, 
+   "notifications", "pointerLock", "power",  "serial", "signedInDevices", 
+   {
+      "socket": [ "tcp-connect", "tcp-listen", "udp-send-to", "udp-bind" ]
+   }, "storage",  "system.cpu", "system.display", "system.memory", "system.network", "system.storage", "tts", "unlimitedStorage", "usb", "videoCapture", "usb", "webview",
+   "<all_urls>"
+   ],
+   "sandbox": {
+      "pages": [ "sandbox.html" ]
+   },
+   "sockets": {
+      "tcp": {
+         "connect": "*"
+      },
+      "tcpServer": {
+         "listen": "*"
+      },
+      "udp": {
+         "bind": "*",
+         "send": "*"
+      }
+   },
+   "version": "1.0.3"
+}

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>右上角的按钮弹出页</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <style type="text/css">
+        #yc-baidu-translate {
+            width: 268px;
+            box-sizing:border-box;
+            background-color:#fff;
+            font: 12px "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #yc-baidu-translate * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #yc-baidu-translate .header {
+            text-align: center;
+        }
+        
+        #yc-baidu-translate .footer {
+            background-color:#F0F0F0;
+            height : 30px;
+            line-height: 30px;
+        }
+        #yc-baidu-translate .jumbotron {
+            margin: 20px 0;
+        }
+        #translate-page {
+            display: block;
+            background-color: #4395FF;
+            cursor: pointer;
+            border: none;
+            height: 32px;
+            width: 138px;
+            margin: 10px auto;
+            border-radius: 3px;
+            color: white;
+            outline: none;
+        }
+        #yc-baidu-translate .select-l {
+            width: 111px;
+            float: left;
+            height: 36px;
+            line-height: 36px;
+            cursor: pointer;
+            box-sizing:border-box;
+        }
+
+        #yc-baidu-translate .main {
+            width: 240px;
+            height: 36px;
+            margin: 0 auto;
+            margin-top: 10px;
+            border: 1px solid #dedede;
+            border-bottom: none;
+            box-sizing:border-box;
+        }
+        
+        #yc-baidu-translate .from-click {
+            border-right: 1px solid #dedede;
+        }
+        
+        .translate-to {
+            border-left: 1px solid #fff;
+        }
+
+        #yc-baidu-translate .to-click {
+            border-left: 1px solid #dedede;
+        }
+
+        #yc-baidu-translate .translate-from .select-inner {
+            display: none;
+            position: relative;
+            z-index: 999;
+            top:-1px;
+            left:-1px;
+            width: 110px;
+            height: 150px;
+            background-color: #fff;
+            border: 1px solid #dedede;
+            border-top: none;
+            overflow-y: scroll;
+        }
+
+        #yc-baidu-translate .translate-to .select-inner {
+            display: none;
+            position: relative;
+            z-index: 999;
+            top:-1px;
+            left:-1px;
+            width: 110px;
+            height: 150px;
+            background-color: #fff;
+            border: 1px solid #dedede;
+            border-top: none;
+            overflow-y: scroll;
+        }
+
+
+        #yc-baidu-translate .selected-l-text {
+            text-align: center;
+            width: auto;
+            max-width: 73px;
+            height: 36px;
+            display: inline-block;
+            margin-right: 9px;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .selected-l {
+            display: flex;
+            justify-content: center;
+            height: 36px;
+        }
+        #yc-baidu-translate .select-inner span {
+            margin-left: 7px;
+            padding-left: 8px;
+            display: block;
+            text-align: left;
+        }
+        #yc-baidu-translate .select-inner span:hover {
+            background-color: #eef2fc;
+            color: #4395FF;
+        }
+        #yc-baidu-translate .select-inner .span-hover {
+            color: #4395FF;
+        }
+        #yc-baidu-translate .select-change {
+            float: left;
+            margin: 10px 4px;
+        }
+
+        #yc-baidu-translate .arrow-down {
+            position: relative;
+            top: -2px;
+        }
+
+        
+        button#translate-text {
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            background-color: #4395FF;
+            cursor: pointer;
+            border: none;
+            height: 32px;
+            width: 33px;
+            border-radius: 3px !important;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        a#translate-text-clear{
+            display: block;
+            position: absolute;
+            left:12px;
+            bottom: 5px;
+            visibility: hidden;
+        }
+        
+        #result {
+            width: 240px;
+            margin:10px auto;
+            background-color:#f5f5f5;
+            max-height:180px;
+            box-sizing:border-box;
+            overflow-y:auto; 
+            word-break:break-all;
+            color: #333;
+        }
+        
+        button#translate-page:hover {
+            background-color: #54A0FF;
+        }
+        
+        
+        button#translate-text:hover {
+            background-color: #54A0FF;
+        }
+        
+        button#translate-text:active {
+            background-color: #0077EC;
+        }
+
+        .yc-baidu-goto-translate {
+            float: right;
+            margin-right: 15px;
+            color: #666;
+            font-size: 12px;
+        }
+        .yc-baidu-translate-feedback {
+            float: right;
+            margin-right: 10px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        #yc-baidu-translate .row {
+            position: relative;
+            width: 240px;
+            padding: 12px 12px 40px 12px;
+            margin: 0 auto;
+            border: 1px solid #dedede;
+            box-sizing:border-box;
+        }
+        #yc-baidu-translate .form-control {
+            overflow: hidden;
+            width: 100%;
+            height: 60px;
+            max-height: 150px;
+            color: #333;
+            outline: none;
+            resize:none;
+            border: none;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", sans-serif !important;
+        }
+        
+        #yc-baidu-translate .yc-baidu-translate-footer {
+            width: 100%;
+            height: 34px;
+            background-color: #f0f0f0;
+            padding: 0 13px;
+            /*display: -webkit-flex;*/
+            /*display: -flex;*/
+            /*align-items: center;*/
+            box-sizing:border-box;
+        }
+
+        #icon_to_options {
+            flex:0.3;
+        }
+        
+        #form_baidu_com_fanyi:before {
+            content: "●";
+            color: red;
+            font-size: 10px;
+            margin-left: 12px;
+        }
+
+        #fanyi_baidu_com {
+            flex:1.7; 
+            display: block;
+            text-align: right;
+            cursor: pointer;
+            text-decoration: none;
+            color: #666;
+        }
+        #tousu_baidu_com_fanyi_add {
+            flex:1.5;
+            display: block;
+            text-align: right;
+            cursor: pointer;
+            text-decoration: none;
+            color: #666;
+        }
+
+        #huodong_baidu_com_fanyi {
+            /*flex:1.5;*/
+            display: block;
+            text-align: right;
+            float: right;
+            cursor: pointer;
+            text-decoration: none;
+            color: red;
+            background: #f0f0f0;
+            border: 0px solid #fff;
+        }
+        #form_baidu_com_fanyi {
+            flex:1.5;
+            visibility: hidden;
+            /*text-align: right;*/
+        }
+        #tousu_baidu_com_fanyi_add:hover, #fanyi_baidu_com:hover, #huodong_baidu_com_fanyi:hover{
+            color: #4395ff;
+        }
+
+        .lang-line {
+            height: 1px;
+            background-color: #eee;
+            margin-left: 0px !important;
+        }
+        
+        .check-icon {
+            margin-right: 5px !important;
+        }
+
+        .checkMsg {
+            color: #009900;
+        }
+        .translate-error {
+            display: none;
+            position: absolute;
+            width: auto;
+            left:12px;
+            top:12px;
+            color: red;
+        }
+        .translate-placeholder {
+            display: block;
+            position: absolute;
+            width: auto;
+            left: 12px;
+            top: 12px;
+            color: #c9c9c9;
+        }
+        #translate-page.disabled,
+        #translate-page.disabled:hover {
+            background-color: #ccc;
+        }
+        #huaci_switch {
+            margin-left: 6px;
+            height: 22px;
+            position: relative;
+            left: 0;
+            top: 7px;
+        }
+        #yc-baidu-translate .yc-baidu-translate-footer-p {
+            width: 100px;
+            height: 34px;
+            float: left;
+        }
+        #yc-baidu-translate .yc-baidu-translate-footer-p span {
+            display: inline-block;
+            height: 34px;
+            line-height: 34px;
+        }
+        #yc-baidu-translate .icon_options {
+            /*width: 100px;*/
+            float: right;
+            height: 34px;
+        }
+        #yc-baidu-translate .icon_options_item {
+            text-decoration: none;
+            display: inline-block;
+            height: 14px;
+            margin-top: 8.5px;
+            margin-left: 5px;
+        }
+        </style>
+		<script type="text/javascript" src="js/third_party/hm.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+        <script type="text/javascript" src="js/common-lib.js"></script>
+        <script src="js/popup.js"></script>
+    </head>
+    
+    <body id="yc-baidu-translate">
+        <div class="container">
+            <div class="header">
+                <div class="jumbotron">
+                    <button class="" id="translate-page">翻译当前网页</button>
+                </div>               
+            </div>
+           
+            <div class="main">
+                <div class="select-l translate-from" data-click="no-click">
+                    <div class="selected-l">
+                        <span class="selected-l-text" value="auto">自动检测</span>
+                        <span class="arrow-down">
+                            <img src="./imgs/map/arrow_down_nomal.png" alt="">
+                        </span>
+                    </div>
+                    <div class="select-inner">
+                        <span value="auto" class="span-hover">自动检测</span>
+                        <span value="zh">中文</span>
+                        <span value="en">英语</span>
+                        <span class="lang-line"></span>
+                        <span value="jp">日语</span>
+                        <span value="ara">阿拉伯语</span>
+                        <span value="est">爱沙尼亚语</span>
+                        <span value="bul">保加利亚语</span>
+                        <span value="pl">波兰语</span>  
+                        <span value="dan">丹麦语</span> 
+                        <span value="de">德语</span>
+                        <span value="ru">俄语</span>
+                        <span value="fra">法语</span>
+                        <span value="fin">芬兰语</span> 
+                        <span value="kor">韩语</span>
+                        <span value="nl">荷兰语</span>
+                        <span value="cs">捷克语</span> 
+                        <span value="rom">罗马尼亚语</span> 
+                        <span value="pt">葡萄牙语</span>
+                        <span value="swe">瑞典语</span> 
+                        <span value="slo">斯洛文尼亚语</span> 
+                        <span value="th">泰语</span>
+                        <span value="wyw">文言文</span>
+                        <span value="spa">西班牙语</span>
+                        <span value="el">希腊语</span>  
+                        <span value="hu">匈牙利语</span> 
+                        <span value="it">意大利语</span>
+                        <span value="yue">粤语</span>
+                        <span value="cht">中文繁体</span>  
+                    </div>
+                </div>
+
+                <div class="select-change">
+                    <img src="imgs/map/right-arrow.png">
+                </div>
+                
+                <div class="select-l translate-to" data-click="no-click">
+                    <div class="selected-l">
+                        <span class="selected-l-text" value="zh">中文</span>
+                        <span class="arrow-down">
+                            <img src="./imgs/map/arrow_down_nomal.png" alt="">
+                        </span>
+                    </div>
+                    <div class="select-inner">
+                        <span value="zh">中文</span>
+                        <span value="en">英语</span>
+                        <span value="jp">日语</span>
+                        <span class="lang-line"></span>
+                        <span value="ara">阿拉伯语</span>
+                        <span value="est">爱沙尼亚语</span>
+                        <span value="bul">保加利亚语</span>
+                        <span value="pl">波兰语</span>  
+                        <span value="dan">丹麦语</span> 
+                        <span value="de">德语</span>
+                        <span value="ru">俄语</span>
+                        <span value="fra">法语</span>
+                        <span value="fin">芬兰语</span> 
+                        <span value="kor">韩语</span>
+                        <span value="nl">荷兰语</span>
+                        <span value="cs">捷克语</span> 
+                        <span value="rom">罗马尼亚语</span> 
+                        <span value="pt">葡萄牙语</span>
+                        <span value="swe">瑞典语</span> 
+                        <span value="slo">斯洛文尼亚语</span> 
+                        <span value="th">泰语</span>
+                        <span value="wyw">文言文</span>
+                        <span value="spa">西班牙语</span>
+                        <span value="el">希腊语</span>  
+                        <span value="hu">匈牙利语</span> 
+                        <span value="it">意大利语</span>
+                        <span value="yue">粤语</span>
+                        <span value="cht">中文繁体</span> 
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <textarea rows="7" id="query" class="form-control" placeholder="" required></textarea>
+                <span class="translate-error">输入内容不能为空</span>
+                <span class="translate-placeholder">输入文字 即可翻译</span>
+                <a href="javascript:void(0)" id="translate-text-clear"><img src="imgs/map/close.png"></a>
+                <button id="translate-text" class="btn btn-primary">译</button>
+            </div>
+            
+             <div id="result"></div>
+            <div class="yc-baidu-translate-footer">
+                <p class="yc-baidu-translate-footer-p">
+                    <span>划词翻译</span>
+                    <img src="imgs/map/on.png" class="switch-open" id="huaci_switch">
+                </p>
+                <div class="icon_options">
+                    <a href="javascript:;" id="icon_options_home" class="icon_options_item">
+                        <img title="前往百度翻译" id="icon_options_home_img" src="imgs/map/home.png">
+                    </a>
+                    <a href="javascript:;" id="icon_options_setting" class="icon_options_item">
+                        <img title="插件设置" id="icon_options_setting_img" src="imgs/map/setup.png">
+                    </a>
+                    <a href="javascript:;" id="icon_options_help" class="icon_options_item">
+                        <img title="帮助和反馈" id="icon_options_help_img" src="imgs/map/help.png">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
