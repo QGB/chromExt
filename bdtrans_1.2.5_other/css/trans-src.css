@@ -1,0 +1,121 @@
+#trans-tooltip,#trans-content,#trans-content div,#trans-content div span,#tip-left-top,#tip-top,#tip-right-top,#tip-right,#tip-right-bottom,#tip-bottom,#tip-left-bottom,#tip-left,#tip-arrow-bottom,#tip-arrow-top {
+	padding: 0;
+	margin: 0;
+	float: none;
+	border: 0;
+	position: absolute;
+	text-align: left;
+	backgrond: none;
+}
+
+#tip-left-top,#tip-top,#tip-right-top,#tip-right,#tip-right-bottom,#tip-bottom,#tip-left-bottom,#tip-left,#tip-arrow-bottom,#tip-arrow-top {
+	*font-size: 0;
+}
+
+#tip-left-top,#tip-top,#tip-left {
+	left: 0;
+	top: 0;
+}
+
+#tip-arrow-bottom,#tip-arrow-top {
+	visibility: hidden;
+	z-index: 10003;
+	width: 15px;
+	height: 12px;
+	font-size: 0;
+}
+
+#trans-tooltip {
+	z-index: 10000;
+	visibility: hidden;
+	font: 12px arial,\u5b8b\u4f53;
+	padding: 0 2px 2px 0;
+	zoom: 1;
+	border-radius: 3px;
+}
+
+#tip-right-top,#tip-right-top,#tip-right-bottom,#tip-left-bottom {
+	z-index: 10001;
+}
+
+#trans-content,#trans-content div,#trans-content div span {
+	position: static;
+}
+
+#trans-content {
+	background: #fff;
+	padding: 5px 10px 8px 8px;
+	color: #000;
+}
+
+#trans-content div {
+	font: 12px arial,\u5b8b\u4f53;
+	white-space: nowrap;
+	color: #000;
+}
+
+#trans-content div span {
+	color: #7f7f7f;
+}
+
+#tip-left-top {
+	width: 3px;
+	height: 3px;
+/*	background: url(http://fanyi.baidu.com/asset/tip-left-top.png);*/
+}
+
+#tip-top {
+	height: 2px;
+/*	background: url(http://fanyi.baidu.com/asset/tip-top.png) repeat-x;*/
+}
+
+#tip-right-top {
+	right: 0;
+	top: 0;
+	width: 6px;
+	height: 3px;
+/*	background: url(http://fanyi.baidu.com/asset/tip-right-top.png);*/
+}
+
+#tip-right {
+	right: 0;
+	top: 3px;
+	width: 4px;
+/*	background: url(http://fanyi.baidu.com/asset/tip-right.png) repeat-y;*/
+}
+
+#tip-right-bottom {
+	right: 0;
+	bottom: 1px;
+	width: 6px;
+	height: 5px;
+/*	background: url(http://fanyi.baidu.com/asset/tip-right-bottom.png);*/
+}
+
+#tip-bottom {
+	left: 5px;
+	bottom: 0;
+	height: 4px;
+/*	background: url(http://fanyi.baidu.com/asset/tip-bottom.png) repeat-x;*/
+}
+
+#tip-left-bottom {
+	left: 0;
+	bottom: 0;
+	width: 5px;
+	height: 6px;
+/*	background: url(http://fanyi.baidu.com/asset/tip-left-bottom.png);*/
+}
+
+#tip-left {
+	width: 2px;
+/*	background: url(http://fanyi.baidu.com/asset/tip-left.png);*/
+}
+
+#tip-arrow-bottom {
+/*	background: url(http://fanyi.baidu.com/asset/tip-arrow-bottom.png);*/
+}
+
+#tip-arrow-top {
+/*	background: url(http://fanyi.baidu.com/asset/tip-arrow-top.png);*/
+}

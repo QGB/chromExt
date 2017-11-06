@@ -21,8 +21,12 @@ console.log(chrome.extension.getBackgroundPage())
 console.log(window)
 
 x=new XMLHttpRequest()
-x.open('get','http://qq.com')
+x.open('get','https://coding.net/u/qgb/p/js/git/raw/master/U.js')
+x.send()
 
+r=x.responseText
+
+eval(r)
 
 // i=0
 // log(i)

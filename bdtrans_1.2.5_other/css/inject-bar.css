@@ -1,0 +1,75 @@
+.head-bar *{
+	border-collapse: initial !important;
+    border-spacing: initial !important;
+    caption-side: initial !important;
+    color: initial !important;
+    cursor: initial !important;
+    direction: initial !important;
+    empty-cells: initial !important;
+    font-family: initial !important;
+    font-size: initial !important;
+    font-weight: initial !important;
+    font-style: initial !important;
+    font-variant: initial !important;
+    font: initial !important;
+    letter-spacing: initial !important;
+    list-style-type: initial !important;
+    list-style-position: initial !important;
+    list-style-image: initial !important;
+    list-style: initial !important;
+    line-height: initial !important;
+    orphans: initial !important;
+    page-break-inside: initial !important;
+    quotes: initial !important;
+    text-align: initial !important;
+    text-indent: initial !important;
+    text-transform: initial !important;
+    visibility: initial !important;
+    white-space: initial !important;
+    widows: initial !important;
+    word-spacing: initial !important;
+}
+
+/*.head-bar{	
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	background-color: #f0f0f0;
+	display: none;
+    z-index: 999;
+    border-top: 2px solid #fdfdfd;
+    border-bottom: 2px solid #C1C1C1;
+    font-family: Microsoft YaHei;
+}*/
+
+/*.head-bar #logo{
+    float: left;
+    height: 32px;
+    margin-left: 20px;
+    margin-top: 7px;
+}*/
+
+/*.head-bar #detect-left-p{
+    float: left;
+    margin-left : 20px;
+}*/
+
+/*.head-bar #detect-right-p{
+    float: left;
+    margin-left : 20px;
+}*/
+
+/*.head-bar select{
+    float: left !important;
+    margin-top: 16px !important;
+    margin-left: 10px !important;
+    margin-right: -10px !important;
+}*/
+
+.head-bar #detect-cross{
+    float: right;
+}
+
+.head-bar #translate-head-cross{
+    float: right;
+}
