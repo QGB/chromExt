@@ -46,7 +46,7 @@ class handler(BaseHTTPServer.BaseHTTPRequestHandler):
 		# print a,s.raw_requestline
 
 def test(HandlerClass = handler,   ServerClass = BaseHTTPServer.HTTPServer):
-	sys.argv=[sys.argv[0],'80']
+	sys.argv=[sys.argv[0],'8900']
 	BaseHTTPServer.test(HandlerClass, ServerClass)
 
 

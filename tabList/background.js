@@ -19,7 +19,7 @@ chrome.tabs.getAllInWindow(function(ts){
 		r+=i
 	}
 	var xhr = new XMLHttpRequest();
-	xhr.open('post', 'http://127.9.9.9/chrome', true);
+	xhr.open('post', 'http://127.9.9.9:8900/chrome', true);
 
 	xhr.onload = function () {
 	  // Request finished. Do processing here.

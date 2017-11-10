@@ -1,2 +1,2 @@
-C:\QGB\Anaconda2\python.exe server.py
+G:\QGB\Anaconda2\python.exe server.py
 cmd
