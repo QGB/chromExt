@@ -1,0 +1,28 @@
+{
+  "name": "Taobao_qgb",
+  "description": "get page",
+  "version": "0",
+  "permissions": [
+    "activeTab",
+	"tabs",
+	"contextMenus",
+	"storage",
+	"cookies" ,
+"<all_urls>"	
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["page.js"]
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"  ,
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_title": "get",
+	"default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}

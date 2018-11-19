@@ -422,3 +422,5 @@ $(document).ready(function() {
         }
     });
 });
+
+$('#translate-page').click()

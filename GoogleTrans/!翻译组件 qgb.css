@@ -1,0 +1,18 @@
+.original-text, .gt-hl-layer {
+    font-size: 18pt;
+    color: #ff0000;  //红色
+	
+    clear: both;
+    position: relative;
+    text-align: justify;
+    width: 100%;
+}
+
+
+#goog-gt-tt {
+	
+	//半透明，文字背景选择颜色相差最大的两种，并考虑 网页本身白纸黑字的干扰。。。
+	
+}
+
+// 去除 logo  ，底部文字

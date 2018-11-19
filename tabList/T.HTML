@@ -1,0 +1,11 @@
+ <script src="interpreter.js"></script>
+  <textarea id=t>
+</textarea> 
+ 
+ <script>
+ alert(interpreter)
+ t=document.getElementById('t')
+ t.value=interpreter.evals('(function(){return arguments})(1)')
+ 
+ 
+ </script>

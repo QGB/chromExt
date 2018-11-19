@@ -6,8 +6,9 @@ try:
 except ImportError:
 	from StringIO import StringIO
 
-sys.path.append('D:/Program Files/.babun/cygwin/lib/python2.7/');from qgb import *
+# sys.path.append('D:/Program Files/.babun/cygwin/lib/python2.7/');from qgb import *
 gsr=''
+
 class handler(BaseHTTPServer.BaseHTTPRequestHandler):
 	server_version = "SimpleHTTP/" 
 
