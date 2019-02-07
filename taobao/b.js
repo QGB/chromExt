@@ -17,7 +17,7 @@ loadQGB=function (isPrint){
 function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms) )  }
 async function test(){
 	while(true){
-		loadQGB()
+		//loadQGB()
 		//console.log(new Date())
 		await sleep(999)
 		
