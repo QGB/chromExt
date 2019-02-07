@@ -18,7 +18,7 @@ def sleep():
 	
 from flask import Flask,request,make_response,json
 app = Flask(__name__)
-def on_receive(request):
+def on_receive():
 	t=request.path[1:]
 	r=json.loads(request.get_data())
 	U.set(t,r)
