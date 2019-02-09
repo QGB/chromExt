@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+__pycache__
+*.pyc
+
+uwsgi.pid
+test.log
+!.txt
+
+
+*.dill

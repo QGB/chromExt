@@ -15,8 +15,16 @@ function doc_keyUp(e) {
 }
 // register the handler
 document.addEventListener('keyup', doc_keyUp, false);
-
-
+/*
+ chrome.runtime.sendMessage({
+            audioSrc: mh('book','en')
+        })
+b.J.style.visibil
+ chrome.runtime.sendMessage({
+            audioSrc: 'https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=en&tk=775040.775040&q='
+        })
+		
+*/
 /* Copyright 2014 Google */
 (function() {
     var h, aa = aa || {}, n = this, p = function(a) {
@@ -6834,8 +6842,13 @@ document.addEventListener('keyup', doc_keyUp, false);
                     b.a.listen(a, "deactivate", b.Ib)
                 } else
                     b.a.listen(a, "blur", b.Ib);
-                "toggle_display" == b.xa ? (b.J.style.visibility = "visible",
-                Te(b.J, !0)) : "move_offscreen" == b.xa && b.b();
+                "toggle_display" == b.xa ? (b.J.style.visibility = "visible", Te(b.J, !0)) : "move_offscreen" == b.xa && b.b();
+				
+/////////// 显示翻译详情框   // ?  :  三元表达式  // qgb
+chrome.runtime.sendMessage({
+	audioSrc: 'https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=en&tk=775040.775040&q='+ encodeURIComponent(window.selection)
+})
+//////////////////////////////
                 b.ga = !0;
                 b.hb = ia();
                 b.h ? (wc(b.h, "end", b.Kb, !1, b),

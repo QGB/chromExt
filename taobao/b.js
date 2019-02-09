@@ -18,7 +18,7 @@ function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms) )  }
 async function test(){
 	while(true){
 		//loadQGB()
-		//console.log(new Date())
+		console.log(new Date())
 		await sleep(999)
 		
 	}
